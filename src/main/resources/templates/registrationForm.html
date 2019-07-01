@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration page</title>
+</head>
+<body>
+<form method="post">
+    <label>First name</label>
+    <input type="text" name="firstName" placeholder="first name"><br>
+    <label>Last name</label>
+    <input type="text" name="lastName" placeholder="last name"><br>
+    <label>Email address</label>
+    <input type="email" name="email" placeholder="email address"><br>
+    <label>Password</label>
+    <input type="password" name="password"><br>
+    <label>Repeat password</label>
+    <input type="password" name="repeat_password"><br>
+    <input type="radio" name="radio_button" value="new_group">
+    <label>I want to create a new group</label><br>
+    <input type="radio" name="radio_button" value="existing_group">
+    <label>I want to join existing group</label>
+    <input type="text" name="group_id" placeholder="group id">
+    <br>
+    <button type="submit">Register</button>
+</form>
+</body>
+</html>
