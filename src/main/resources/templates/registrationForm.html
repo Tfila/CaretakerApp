@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <div th:replace="fragments/header :: meta"></div>
     <title>Registration page</title>
+    <div th:replace="fragments/header :: headercss"></div>
 </head>
 <body>
-<form method="post">
-    <label>First name</label>
-    <input type="text" name="firstName" placeholder="first name"><br>
-    <label>Last name</label>
-    <input type="text" name="lastName" placeholder="last name"><br>
-    <label>Email address</label>
-    <input type="email" name="email" placeholder="email address"><br>
-    <label>Password</label>
-    <input type="password" name="password"><br>
-    <label>Repeat password</label>
-    <input type="password" name="repeat_password"><br>
-    <input type="radio" name="radio_button" value="new_group">
-    <label>I want to create a new group</label><br>
-    <input type="radio" name="radio_button" value="existing_group">
-    <label>I want to join existing group</label>
+<form th:action="@{/register}" method="post" th:object="${userForm}">
+    <div class="jumbotron" style="width: 40rem; margin-left: auto; margin-right: auto; margin-top: 30px;">
+        <h1 class="display-4">Registration page</h1><br>
+    <div class="form-group row">
+    <label class="col-sm-4 col-form-label">First name</label>
+        <div class="col-sm-6">
+    <input type="text" name="firstName" placeholder="first name" th:field="*{firstName}">
+        <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+        </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Last name</label>
+        <div class="col-sm-6">
+    <input type="text" name="lastName" placeholder="last name" th:field="*{lastName}">
+        <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+        </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Email address</label>
+        <div class="col-sm-6">
+        <input type="email" name="email" placeholder="email address" th:field="*{email}">
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Password</label>
+        <div class="col-sm-6">
+        <input type="password" name="password" placeholder="password" aria-describedby="passwordHelpInline" th:field="*{password}"><br>
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+<!--        <small id="passwordHelpInline" class="text-muted">-->
+<!--            Must be 8-20 characters long.-->
+<!--        </small>-->
+        </div>
+    </div>
+    <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Repeat password</label>
+        <div class="col-sm-6">
+    <input type="password" name="repeat_password" placeholder="password" th:field="*{repeatPassword}">
+        <div th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}"></div>
+        </div>
+    </div>
+    <div class="form-check">
+    <input type="radio" name="radio_button" value="new_group" class="form-check-input" id="radio1" checked>
+    <label class="form-check-label" for="radio1">I want to create a new group</label><br>
+    </div>
+    <div class="form-check">
+    <input type="radio" name="radio_button" value="existing_group" class="form-check-input" id="radio2">
+    <label class="form-check-label" for="radio2">I want to join existing group</label>
     <input type="text" name="group_id" placeholder="group id">
+    </div>
     <br>
-    <button type="submit">Register</button>
+    <button type="submit" class="btn btn-info">Register</button>
+    </div>
 </form>
+<div th:replace="fragments/footer :: bootstrap_scripts"></div>
 </body>
 </html>

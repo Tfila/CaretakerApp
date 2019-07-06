@@ -1,0 +1,22 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="meta">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</div>
+
+<div th:fragment="headercss">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</div>
+
+<div th:fragment="header-fragment">
+<!--    <div class="topnav">-->
+<!--        <a th:if="!${@userContext.isLoggedIn()}" href="/register">Rejestracja</a>-->
+<!--        <a th:if="!${@userContext.isLoggedIn()}" href="/login">Logowanie</a>-->
+<!--        <a th:if="${@userContext.isAdmin()}" href="/admin/product">Dodaj produkt</a>-->
+<!--        <a th:if="${@userContext.isLoggedIn()}" href="/products">Produkty</a>-->
+<!--        <a th:if="${@userContext.isLoggedIn()}" style="float: right" href="/logout">Wyloguj</a>-->
+<!--        <p style="color: white; float: right" th:if="${@userContext.isLoggedIn()}"-->
+<!--           th:text="${@userContext.provideUsername()}">User</p>-->
+<!--    </div>-->
+</div>
+</html>
