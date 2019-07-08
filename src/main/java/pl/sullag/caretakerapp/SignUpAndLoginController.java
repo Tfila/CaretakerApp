@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
-public class MainController {
+public class SignUpAndLoginController {
 
     @RequestMapping("/login")
     public String showLoginPage() {
