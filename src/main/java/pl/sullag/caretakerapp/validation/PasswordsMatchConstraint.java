@@ -1,4 +1,4 @@
-package pl.sullag.caretakerapp;
+package pl.sullag.caretakerapp.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

@@ -1,7 +1,8 @@
-package pl.sullag.caretakerapp;
+package pl.sullag.caretakerapp.validation;
 
 import com.google.common.base.Joiner;
 import org.passay.*;
+import pl.sullag.caretakerapp.validation.ValidPassword;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

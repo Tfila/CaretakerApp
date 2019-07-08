@@ -1,4 +1,7 @@
-package pl.sullag.caretakerapp;
+package pl.sullag.caretakerapp.validation;
+
+import pl.sullag.caretakerapp.UserDTO;
+import pl.sullag.caretakerapp.validation.PasswordsMatchConstraint;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

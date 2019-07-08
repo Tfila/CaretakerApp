@@ -2,6 +2,8 @@ package pl.sullag.caretakerapp;
 
 import lombok.Getter;
 import lombok.Setter;
+import pl.sullag.caretakerapp.validation.PasswordsMatchConstraint;
+import pl.sullag.caretakerapp.validation.ValidPassword;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
