@@ -9,14 +9,15 @@ import javax.validation.constraints.Size;
 
 @Getter
 @Setter
+@PasswordsMatchConstraint(message = "passwords don't match")
 public class UserForm {
 
     @NotNull
-    @Size(min=2, max=20)
+    @Size(min = 2, max = 20)
     private String firstName;
 
     @NotNull
-    @Size(min=2, max=20)
+    @Size(min = 2, max = 20)
     private String lastName;
 
     @NotNull
@@ -28,7 +29,6 @@ public class UserForm {
     private String password;
 
     @NotNull
-    @ValidPassword
     private String repeatPassword;
 
     private Roles role;
