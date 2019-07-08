@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @PasswordsMatchConstraint(message = "passwords don't match")
-public class UserForm {
+public class UserDTO {
 
     @NotNull
     @Size(min = 2, max = 20)

@@ -18,13 +18,13 @@ public class MainController {
     }
 
     @GetMapping("/register")
-    public String showRegistrationForm(UserForm userForm, Model model) {
-        model.addAttribute("userForm", userForm);
+    public String showRegistrationForm(UserDTO userDTO, Model model) {
+        model.addAttribute("userDTO", userDTO);
         return "registrationForm";
     }
 
     @PostMapping("/register")
-    public String validateForm(@Valid UserForm userForm, BindingResult bindingResult) {
+    public String validateForm(@Valid UserDTO userDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "registrationForm";
         }

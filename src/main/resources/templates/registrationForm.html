@@ -6,7 +6,7 @@
     <div th:replace="fragments/header :: headercss"></div>
 </head>
 <body>
-<form th:action="@{/register}" method="post" th:object="${userForm}">
+<form th:action="@{/register}" method="post" th:object="${userDTO}">
     <div class="jumbotron" style="width: 50rem; margin-left: auto; margin-right: auto; margin-top: 30px;">
         <h1 class="display-4">Registration page</h1><br>
     <div class="form-group row">
@@ -45,8 +45,8 @@
     <label class="col-sm-4 col-form-label">Repeat password</label>
         <div class="col-sm-6">
     <input type="password" name="repeat_password" placeholder="password" th:field="*{repeatPassword}"><br>
-            <div th:if="${(userForm!=null)&&(userForm.password!=null)&&(userForm.repeatPassword!=null)}">
-            <small class="error-message text-danger" th:if="${!(userForm.password.equals(userForm.repeatPassword))}">Passwords don't match</small>
+            <div th:if="${(userDTO!=null)&&(userDTO.password!=null)&&(userDTO.repeatPassword!=null)}">
+            <small class="error-message text-danger" th:if="${!(userDTO.password.equals(userDTO.repeatPassword))}">Passwords don't match</small>
             </div>
         </div>
     </div>
