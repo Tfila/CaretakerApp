@@ -62,6 +62,7 @@
     <br>
     <button type="submit" class="btn btn-info">Register</button>
     </div>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </form>
 <div th:replace="fragments/footer :: bootstrap_scripts"></div>
 </body>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: meta"></div>
+    <title>Index page</title>
+    <div th:replace="fragments/header :: headercss"></div>
+</head>
+<body>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Wyloguj"/>
+</form>
+<p>Index page</p>
+<form>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+</form>
+<div th:replace="fragments/footer :: bootstrap_scripts"></div>
+</body>
+</html>
