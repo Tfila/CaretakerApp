@@ -37,10 +37,12 @@ public class CaretakerApplicationTests {
     }
 
     @Test
-    public void testIfUserWillBeRedirectedToIndexPageAfterSuccessfulLogin() throws Exception {
-        mockMvc.perform(post("/login").param("username","mery").param("password", "1234"))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("http://localhost/processLogin"));
+    @WithMockUser(roles = "ADMIN")
+    public void testIfAdminUserHasAccessToAdminPage() throws Exception {
+        mockMvc.perform(get("/admin"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("adminPage"));
+
     }
 
 }

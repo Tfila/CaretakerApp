@@ -17,4 +17,9 @@ public class MainController {
         return "indexPage";
     }
 
+    @RequestMapping({"/admin"})
+    public String showAdminPage(){
+        return "adminPage";
+    }
+
 }
