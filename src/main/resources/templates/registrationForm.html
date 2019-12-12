@@ -50,17 +50,30 @@
             </div>
         </div>
     </div>
-    <div class="form-check">
-    <input type="radio" name="radio_button" value="new_group" class="form-check-input" id="radio1" checked>
-    <label class="form-check-label" for="radio1">I want to create a new group</label><br>
+<!--        <div th:each="irole, iroleStat: ${roles}" th:object="${userDTO}">-->
+<!--    <div class="form-check">-->
+<!--    <input type="radio" th:field="*{role}" th:name="radio_button" th:value="${irole}" th:id="'role'+${iroleStat.count}" class="form-check-input" id="radio1" checked>-->
+
+        <!--    <label class="form-check-label" for="radio1">I want to create a new group</label><br>-->
+
+<!--    <div class="form-check">-->
+<!--    <input type="radio" th:field="*{role}" th:name="radio_button" th:value="${irole}" class="form-check-input" id="radio2">-->
+<!--    <label class="form-check-label" for="radio2">I want to join existing group</label>-->
+<!--    </div>-->
+    <div class="form-check" >
+        <input type="radio" th:field="*{role}" th:value="ROLE_ADMIN" th:name="radio_button" class="form-check-input">
+            <label class="form-check-label" th:for="${#ids.next('role')}">I want to create a new group</label>
     </div>
-    <div class="form-check">
-    <input type="radio" name="radio_button" value="existing_group" class="form-check-input" id="radio2">
-    <label class="form-check-label" for="radio2">I want to join existing group</label>
-    <input type="text" name="group_id" placeholder="group id">
-    </div>
+        <br>
+        <div class="form-check" >
+        <input type="radio" th:field="*{role}" th:value="ROLE_USER" th:name="radio_button" class="form-check-input">
+        <label class="form-check-label" th:for="${#ids.next('role')}">I want to join existing group</label>
+        </div>
+    <input type="text" name="group_id" placeholder="group id" th:field="*{assignedGroupId}">
+
     <br>
     <button type="submit" class="btn btn-info">Register</button>
+    </div>
     </div>
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </form>

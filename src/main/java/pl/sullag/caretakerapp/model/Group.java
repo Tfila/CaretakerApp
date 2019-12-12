@@ -1,4 +1,4 @@
-package pl.sullag.caretakerapp;
+package pl.sullag.caretakerapp.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

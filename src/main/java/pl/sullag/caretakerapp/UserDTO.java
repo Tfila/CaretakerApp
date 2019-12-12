@@ -2,6 +2,8 @@ package pl.sullag.caretakerapp;
 
 import lombok.Getter;
 import lombok.Setter;
+import pl.sullag.caretakerapp.model.Group;
+import pl.sullag.caretakerapp.model.Roles;
 import pl.sullag.caretakerapp.validation.PasswordsMatchConstraint;
 import pl.sullag.caretakerapp.validation.ValidPassword;
 
@@ -34,5 +36,5 @@ public class UserDTO {
     private String repeatPassword;
 
     private Roles role;
-    private Group assignedGroupId;
+    private Long assignedGroupId;
 }
